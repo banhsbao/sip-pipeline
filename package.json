@@ -1,0 +1,16 @@
+{
+  "name": "sip",
+  "version": "1.0.0",
+  "description": "sip library",
+  "main": "src/index.js",
+  "scripts": {
+    "run server": "node src/server.js",
+    "run listener": "node src/index.js"
+  },
+  "author": "banhsbao",
+  "license": "ISC",
+  "dependencies": {
+    "dateformat": "^2.0.0",
+    "pipeline-js": "^1.0.2"
+  }
+}
