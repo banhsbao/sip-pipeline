@@ -1,11 +1,11 @@
 'use strict';
 
-const RequestMessage = require('../RequestMessage');
+const RequestMessage = require('../messages/RequestMessage');
 
 class CheckinRequest extends RequestMessage {
-  constructor(returnDate, location, itemIdentifier, itemProperties) {
+  constructor(returnDate, location, itemIdentifier, itemProperties, identifier) {
     super('09');
-
+    this.identifier = identifier;
     this.noBlock = false;
     this.returnDate = returnDate || '                  ';
     this.currentLocation = location;

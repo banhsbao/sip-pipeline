@@ -1,14 +1,14 @@
 'use strict';
 
-const RequestMessage = require('../RequestMessage');
+const RequestMessage = require('../messages/RequestMessage');
 const FeeType = require('../variables/FeeType');
 const PaymentType = require('../variables/PaymentType');
 const CurrencyType = require('../variables/CurrencyType');
 
 class FeePaidRequest extends RequestMessage {
-  constructor(feeType, paymentType, currencyType, feeAmount, feeIdentifier, transactionId) {
+  constructor(feeType, paymentType, currencyType, feeAmount, feeIdentifier, transactionId, identifier) {
     super('37');
-
+    this.identifier = identifier;
     this.feeType = feeType || FeeType.OTHER_UNKNOWN;
     this.paymentType = paymentType || PaymentType.CASH;
     this.currencyType = currencyType || CurrencyType.EURO;

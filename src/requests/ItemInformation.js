@@ -1,11 +1,11 @@
 'use strict';
 
-const RequestMessage = require('../RequestMessage');
+const RequestMessage = require('../messages/RequestMessage');
 
 class ItemInformationRequest extends RequestMessage {
-  constructor(itemIdentifier) {
+  constructor(itemIdentifier, identifier) {
     super('17');
-
+    this.identifier = identifier;
     this.itemIdentifier = itemIdentifier;
     this.transactionDate = RequestMessage.getDateTime();
   }

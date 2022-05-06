@@ -4,7 +4,6 @@
   "description": "sip library",
   "main": "src/index.js",
   "scripts": {
-    "run server": "node src/server.js",
     "run listener": "node src/index.js"
   },
   "author": "banhsbao",

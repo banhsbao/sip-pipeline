@@ -1,11 +1,11 @@
 'use strict';
 
-const RequestMessage = require('../RequestMessage');
+const RequestMessage = require('../messages/RequestMessage');
 
 class BlockPatronRequest extends RequestMessage {
-  constructor(cardRetained, blockedCardMessage) {
+  constructor(cardRetained, blockedCardMessage, isFinalPipe) {
     super('01');
-
+    this.isFinalPipe = isFinalPipe;
     this.retained = cardRetained;
     this.blockedCardMessage = blockedCardMessage;
     this.transactionDate = RequestMessage.getDateTime();

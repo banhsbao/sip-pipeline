@@ -3,8 +3,9 @@
 const RequestMessage = require('../messages/RequestMessage');
 
 class LoginRequest extends RequestMessage {
-  constructor(userId, password, locationCode) {
+  constructor(userId, password, locationCode, isFinalPipe) {
     super('93');
+    this.isFinalPipe = isFinalPipe;
     this.UIDalgorithm = '0';
     this.PWDalgorithm = '0';
     this.userId = userId;

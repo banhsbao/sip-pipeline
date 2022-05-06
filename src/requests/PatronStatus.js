@@ -1,10 +1,11 @@
 'use strict';
 
-const RequestMessage = require('../RequestMessage');
+const RequestMessage = require('../messages/RequestMessage');
 
 class PatronStatusRequest extends RequestMessage {
-  constructor() {
+  constructor(isFinalPipe) {
     super('23');
+    this.isFinalPipe = isFinalPipe;
     this.transactionDate = RequestMessage.getDateTime();
   }
 

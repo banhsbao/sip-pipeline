@@ -12,7 +12,6 @@ const PatronStatusResponse = require('../responses/PatronStatus');
 const ACStatusResponse = require('../responses/ACStatus');
 
 function parse(message) {
-  console.log(message)
   if (message === null) {
     throw new Error('Invalid SIP2 response: response is null.');
   }

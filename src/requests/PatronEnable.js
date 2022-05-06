@@ -1,10 +1,11 @@
 'use strict';
 
-const RequestMessage = require('../RequestMessage');
+const RequestMessage = require('../messages/RequestMessage');
 
 class PatronEnableRequest extends RequestMessage {
-  constructor() {
+  constructor(identifier) {
     super('25');
+    this.identifier = identifier;
     this.transactionDate = RequestMessage.getDateTime();
   }
 

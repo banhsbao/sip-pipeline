@@ -1,9 +1,9 @@
 const LoginRequest = require('../requests/Login')
 function LoginModule(payload) {
-    //do something
-    const loginRequest = new LoginRequest(payload.username, payload.password, payload.locationCode)
+    payload.plusIndex()
+    const loginRequest = new LoginRequest(payload.username, payload.password, payload.locationCode, payload.isFinalPipe())
     loginRequest.sequence = ++payload.sequence;
-    payload.connection.send(loginRequest.getMessage()+'\r', payload.cb)
+    payload.connection.send(loginRequest.getMessage(), payload.cb)
     return payload;
 }
 

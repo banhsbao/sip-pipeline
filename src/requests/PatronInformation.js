@@ -10,12 +10,12 @@ function pad(num, size) {
 }
 
 class PatronInformationRequest extends RequestMessage {
-  constructor(type, startItem, endItem) {
+  constructor(type, startItem, endItem, isFinalPipe) {
     super('63');
-
     this.type = type || 'none';
     this.startItem = startItem || 1;
     this.endItem = endItem || 5;
+    this.isFinalPipe = isFinalPipe;
     this.transactionDate = RequestMessage.getDateTime();
   }
 

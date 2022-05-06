@@ -1,11 +1,11 @@
 'use strict';
 
-const RequestMessage = require('../RequestMessage');
+const RequestMessage = require('../messages/RequestMessage');
 
 class CheckoutRequest extends RequestMessage {
-  constructor(scRenewalPolicy, nbDueDate, itemIdentifier, itemProperties, feeAcknowledged) {
+  constructor(scRenewalPolicy, nbDueDate, itemIdentifier, itemProperties, feeAcknowledged, identifier) {
     super('11');
-
+    this.identifier = identifier;
     this.scRenewalPolicy = scRenewalPolicy;
     this.noBlock = false;
     this.itemIdentifier = itemIdentifier;

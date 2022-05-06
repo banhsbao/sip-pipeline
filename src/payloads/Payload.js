@@ -1,16 +1,23 @@
 class Payload {
-    constructor(connection, cb) {
+    constructor(connection, host, port,username, password,locationCode, cb, array) {
         this.connection = connection
-        this.host = 'count.intelligentrfid.com.au';
-        this.Port = 6002;
-        this.username = 'LoginUserID';
-        this.password = 'LoginPassword';
-        this.locationCode = 'Location Institution ID';
+        this.host = host;
+        this.Port = port;
+        this.username = username;
+        this.password = password;
+        this.locationCode = locationCode;
+        this.array = array;
+        this.index = 0;
         this.sequence = 0;
-        this.request = {};
-        this.response = {};
-        this.events = [];
         this.cb = cb;
+    }
+
+    plusIndex() {
+        this.index++
+    }
+
+    isFinalPipe() {
+        return this.array.length === this.index
     }
 }
 
